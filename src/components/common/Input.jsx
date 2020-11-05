@@ -18,9 +18,9 @@ const Styled = {
 
 const Input = (props) => {
 
-    const { info, onChange,isEditing } = props
+    const { info, onChange, isEditing } = props
 
-    const { title, value, name,type } = info
+    const { title, value, name, type } = info
 
     return (
         <Styled.Body>

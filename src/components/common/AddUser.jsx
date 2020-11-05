@@ -14,21 +14,18 @@ const Styled = {
         color: white;
     `,
 }
- const AddUser = () => {
-    const AddClick = (e) => {
-        e.preventDefault();
-        console.log('asdf')
-        
-    } 
+const AddUser = (props) => {
 
-    return(
-    <Styled.Body>
-        <button 
-         onClick={
-             AddClick
-         }>추가</button>
-    </Styled.Body>
+    const { onClick } = props
+
+    return (
+        <Styled.Body>
+            <button
+                onClick={
+                    onClick
+                }>추가</button>
+        </Styled.Body>
     )
- }
+}
 
- export default AddUser
+export default AddUser

@@ -28,7 +28,7 @@ const Styled = {
 
 const PhoneBookList = (props) => {
 
-    const { infos, onChange, onClickEditButton } = props
+    const { infos, onChange, onClickEditButton, removeButton } = props
 
     const list = infos.map((res, i)=>{
         return (

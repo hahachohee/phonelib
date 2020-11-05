@@ -13,12 +13,12 @@ const Styled = {
         flex-direction : column;
         color: white;
     `,
-    Row : styled.div`
+    Row: styled.div`
         display : flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         width : 100%;
-        margin-bottom : ${props=>props.bottom}px;
+        margin-bottom : ${props => props.bottom}px;
     `,
     Col: styled.div`
         display : flex;
@@ -30,17 +30,17 @@ const Styled = {
 
 const PhoneBookInfo = (props) => {
 
-    const { info, onChange, onClickEditButton } = props
+    const { info, onChange, onClickEditButton, remove } = props
 
     const { id, isEditing, infos } = info
 
 
-    const handleChangeInput = (e) =>{
+    const handleChangeInput = (e) => {
         onChange(e, id)
     }
 
 
-    const inputList = infos.map((res)=>{
+    const inputList = infos.map((res) => {
         return (
             <Styled.Row key={res.name} bottom="30">
                 <Input
@@ -57,12 +57,19 @@ const PhoneBookInfo = (props) => {
             {inputList}
             <Styled.Row>
                 <button
-                    onClick={e=>{
+                    onClick={e => {
                         e.preventDefault()
                         onClickEditButton(id)
                     }}
                 >
-                    {isEditing ? '저장하기' : '수정하기'}
+                    {isEditing ? '저장' : '수정'}
+                </button>
+                <button
+                    onClick={
+                        remove
+                    }
+                >
+                    삭제
                 </button>
             </Styled.Row>
         </Styled.Body>
