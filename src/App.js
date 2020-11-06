@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import PhoneBookList from "./components/common/PhoneBookList";
 import AddUser from "./components/common/AddUser";
-import UserList from './UserList';
+import UserSearch from './components/common/UserSearch'
 
 const Styled = {
   Body: styled.div`
@@ -113,6 +113,14 @@ function App() {
     });
   };
 
+  const handleSearch = (e) => {
+    setPhoneBookInfos((prevState) => {
+      return prevState.map((res) => {
+          res.filter(e.target.value)
+      })
+    })
+  }
+
   const handleCreate = () => {
     setPhoneBookInfos((prevState) => {
       return prevState.concat({
@@ -138,22 +146,25 @@ function App() {
 
   const handleRemove = (id) => {
     setPhoneBookInfos((prevState) => {
-      return prevState.filter((res) => prevState.id !== id);
+      return prevState.filter(res => res.id !== id)
     });
   };
-
 
   return (
     <Styled.Body>
       <Styled.Container>
-        <Styled.Add>
-          <AddUser onClick={handleCreate} />
-        </Styled.Add>
+      <Styled.Add>
+        <UserSearch onChange={handleSearch}/>
+      </Styled.Add>
+      <Styled.Add>
+        <AddUser onClick={handleCreate} />
+      </Styled.Add>
         <Styled.Wrapper>
           <PhoneBookList
             infos={phoneBookInfos}
             onChange={handleOnChangePhoneBookInfo}
-            onClickEditButton={handleRemove}
+            onClickEditButton={handleOnClickPhoneBookInfoEditButton}
+            remove={handleRemove}
           />
         </Styled.Wrapper>
       </Styled.Container>

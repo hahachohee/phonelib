@@ -30,13 +30,17 @@ const Styled = {
 
 const PhoneBookInfo = (props) => {
 
-    const { info, onChange, onClickEditButton, remove } = props
-
+    const { info, onChange, onClickEditButton,  remove} = props
+    // users, onRemove, user
     const { id, isEditing, infos } = info
 
 
     const handleChangeInput = (e) => {
         onChange(e, id)
+    }
+
+    const handleRemove = () => {
+        remove(id)
     }
 
 
@@ -66,7 +70,7 @@ const PhoneBookInfo = (props) => {
                 </button>
                 <button
                     onClick={
-                        remove
+                        handleRemove
                     }
                 >
                     삭제

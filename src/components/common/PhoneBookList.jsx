@@ -9,8 +9,7 @@ const Styled = {
         flex-direction : column;
         width : 600px;
         margin : 30px auto;
-        
-        align-items: center;
+        align-items: center; 
         justify-content: center;
 
     `,
@@ -28,7 +27,7 @@ const Styled = {
 
 const PhoneBookList = (props) => {
 
-    const { infos, onChange, onClickEditButton, removeButton } = props
+    const { infos, onChange, onClickEditButton, remove } = props
 
     const list = infos.map((res, i)=>{
         return (
@@ -39,6 +38,7 @@ const PhoneBookList = (props) => {
                     info={res}
                     onChange={onChange}
                     onClickEditButton={onClickEditButton}
+                    remove={remove}
                 />
             </Styled.PhoneBookInfoWrapper>
         )
