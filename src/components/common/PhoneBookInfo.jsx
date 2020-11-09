@@ -31,7 +31,7 @@ const Styled = {
 const PhoneBookInfo = (props) => {
 
     const { info, onChange, onClickEditButton,  remove} = props
-    // users, onRemove, user
+    
     const { id, isEditing, infos } = info
 
 

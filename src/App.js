@@ -115,11 +115,10 @@ function App() {
 
   const handleSearch = (e) => {
     setPhoneBookInfos((prevState) => {
-      return prevState.map((res) => {
-          res.filter(e.target.value)
+      prevState.indexOf(e.target.value)
+      prevState.filter(res => res.value === e.target.value)
       })
-    })
-  }
+    }
 
   const handleCreate = () => {
     setPhoneBookInfos((prevState) => {
