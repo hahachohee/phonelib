@@ -1,0 +1,43 @@
+.loginBtn {
+    min-width: 100px;
+    height: 30px;
+    background-color: #FF7E9D;
+    border: solid 3px #FFFFFF;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 5px 0 5px;
+}
+
+.input {
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border: solid 1px white;
+    margin: 20px 0 20px 0; 
+    font-size: 20px;
+    font-weight: bold;
+}
+.td {
+    min-width: 70px;
+    height: 26.5px;
+    background-color: #FF7E9D;
+    border: solid 3px #FFFFFF;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 26.5px;
+    width: 10%;
+}
+
+.nav {
+    display: flex;
+    background-color: #FF7E9D;
+    flex-direction: row;
+    padding: 10px;
+}
